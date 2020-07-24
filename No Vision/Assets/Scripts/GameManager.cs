@@ -15,6 +15,10 @@ public class GameManager : MonoBehaviourPunCallbacks
     [SerializeField]
     private GameObject searchForGamesButtonGameObject;
     #region Unity Callback Methods;
+
+    [Header("Game Data")]
+    public bool isControllingCamera = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +48,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
         {
             uiInformText.text = "Joined to " + PhotonNetwork.CurrentRoom.Name + "\nWaiting for player 2...";
+            isControllingCamera = true;
         }
         else
         {
