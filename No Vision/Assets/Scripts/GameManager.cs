@@ -14,14 +14,20 @@ public class GameManager : MonoBehaviourPunCallbacks
     private TextMeshProUGUI uiInformText;
     [SerializeField]
     private GameObject searchForGamesButtonGameObject;
-    #region Unity Callback Methods;
+    [SerializeField]
+    private GameObject visionBlocker;
 
     [Header("Game Data")]
     public bool isControllingCamera = false;
+    private int pickupsColllected = 0;
+    [SerializeField]
+    private int pickupsNeeded = 20;
 
+    #region Unity Callback Methods;
     // Start is called before the first frame update
     void Start()
     {
+        visionBlocker.SetActive(false);
         uiInformPanelGameObject.SetActive(true);
         searchForGamesButtonGameObject.SetActive(true);
         uiInformText.text = "Click the button to search for a game.";
@@ -49,6 +55,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         {
             uiInformText.text = "Joined to " + PhotonNetwork.CurrentRoom.Name + "\nWaiting for player 2...";
             isControllingCamera = true;
+            visionBlocker.SetActive(true);
         }
         else
         {
@@ -63,8 +70,29 @@ public class GameManager : MonoBehaviourPunCallbacks
         StartCoroutine(DeactivateAfterSeconds(uiInformPanelGameObject, 2.0f));
     }
     #endregion
-    
-    #region PRIVATE Methods
+
+    #region Public Methods
+    public void ChangeGameMode()
+    {
+        isControllingCamera = !isControllingCamera;
+        visionBlocker.SetActive(isControllingCamera);
+    }
+    public void CollectPickup()
+    {
+        pickupsColllected++;
+        if(pickupsColllected >= pickupsNeeded)
+        {
+            // TODO: Load victory screen.
+        }
+        else
+        {
+            ChangeGameMode();
+            // TODO: Spawn next pickup.
+        }
+    }
+    #endregion
+
+    #region Private Methods
     void CreateAndJoinRoom()
     {
         string randomRoomName = "Room" + Random.Range(0, 1000);

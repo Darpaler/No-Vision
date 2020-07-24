@@ -22,7 +22,6 @@ public class SceneLoader : Singleton<SceneLoader>
 
         //Load the actual scene
         StartCoroutine(LoadActualScene());
-
     }
 
     IEnumerator LoadActualScene()
