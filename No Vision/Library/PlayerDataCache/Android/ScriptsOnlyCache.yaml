@@ -4,6 +4,8 @@ ScriptsOnlyBuild:
     - CameraController
     - GameManager
     - LobbyManager
+    - PickupCollider
+    - PickupSpawner
     PhotonUnityNetworking.Demos.dll:
     - Photon.Pun.Demo.Asteroids.Asteroid
     - Photon.Pun.Demo.Asteroids.Bullet
@@ -14,8 +16,6 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.PunBasics.PlayerUI
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
-    PhotonUnityNetworking.Editor.dll:
-    - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
     - Photon.Pun.PhotonRigidbodyView
@@ -67,6 +67,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
     - Class: 64
       Script: {instanceID: 0}
     - Class: 81
@@ -78,32 +80,40 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11270}
+      Script: {instanceID: 11240}
     - Class: 114
-      Script: {instanceID: 11592}
+      Script: {instanceID: 11564}
     - Class: 114
-      Script: {instanceID: 11616}
+      Script: {instanceID: 11588}
     - Class: 114
-      Script: {instanceID: 11816}
+      Script: {instanceID: 11790}
     - Class: 114
-      Script: {instanceID: 12186}
+      Script: {instanceID: 12160}
     - Class: 114
-      Script: {instanceID: 12626}
+      Script: {instanceID: 12600}
     - Class: 114
-      Script: {instanceID: 12780}
+      Script: {instanceID: 12756}
     - Class: 114
-      Script: {instanceID: 13128}
+      Script: {instanceID: 13104}
     - Class: 114
-      Script: {instanceID: 13430}
+      Script: {instanceID: 13290}
     - Class: 114
-      Script: {instanceID: 13518}
+      Script: {instanceID: 13332}
     - Class: 114
-      Script: {instanceID: 13974}
+      Script: {instanceID: 13412}
     - Class: 114
-      Script: {instanceID: 14076}
+      Script: {instanceID: 13500}
+    - Class: 114
+      Script: {instanceID: 13958}
+    - Class: 114
+      Script: {instanceID: 14060}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 135
+      Script: {instanceID: 0}
+    - Class: 136
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -139,19 +149,19 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11270}
+      Script: {instanceID: 11240}
     - Class: 114
-      Script: {instanceID: 11592}
+      Script: {instanceID: 11564}
     - Class: 114
-      Script: {instanceID: 12186}
+      Script: {instanceID: 12160}
     - Class: 114
-      Script: {instanceID: 13128}
+      Script: {instanceID: 13104}
     - Class: 114
-      Script: {instanceID: 13430}
+      Script: {instanceID: 13412}
     - Class: 114
-      Script: {instanceID: 13518}
+      Script: {instanceID: 13500}
     - Class: 114
-      Script: {instanceID: 14076}
+      Script: {instanceID: 14060}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -208,63 +218,63 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11270}
+      Script: {instanceID: 11240}
     - Class: 114
-      Script: {instanceID: 11468}
+      Script: {instanceID: 11440}
     - Class: 114
-      Script: {instanceID: 11494}
+      Script: {instanceID: 11466}
     - Class: 114
-      Script: {instanceID: 11536}
+      Script: {instanceID: 11508}
     - Class: 114
-      Script: {instanceID: 11592}
+      Script: {instanceID: 11564}
     - Class: 114
-      Script: {instanceID: 12084}
+      Script: {instanceID: 12058}
     - Class: 114
-      Script: {instanceID: 12186}
+      Script: {instanceID: 12160}
     - Class: 114
-      Script: {instanceID: 12238}
+      Script: {instanceID: 12212}
     - Class: 114
-      Script: {instanceID: 12278}
+      Script: {instanceID: 12252}
     - Class: 114
-      Script: {instanceID: 12552}
+      Script: {instanceID: 12526}
     - Class: 114
-      Script: {instanceID: 12626}
+      Script: {instanceID: 12600}
     - Class: 114
-      Script: {instanceID: 12780}
+      Script: {instanceID: 12756}
     - Class: 114
-      Script: {instanceID: 12848}
+      Script: {instanceID: 12824}
     - Class: 114
-      Script: {instanceID: 12946}
+      Script: {instanceID: 12922}
     - Class: 114
-      Script: {instanceID: 13048}
+      Script: {instanceID: 13024}
     - Class: 114
-      Script: {instanceID: 13064}
+      Script: {instanceID: 13040}
     - Class: 114
-      Script: {instanceID: 13128}
+      Script: {instanceID: 13104}
     - Class: 114
-      Script: {instanceID: 13148}
+      Script: {instanceID: 13124}
     - Class: 114
-      Script: {instanceID: 13292}
+      Script: {instanceID: 13270}
     - Class: 114
-      Script: {instanceID: 13326}
+      Script: {instanceID: 13306}
     - Class: 114
-      Script: {instanceID: 13352}
+      Script: {instanceID: 13334}
     - Class: 114
-      Script: {instanceID: 13364}
+      Script: {instanceID: 13346}
     - Class: 114
-      Script: {instanceID: 13430}
+      Script: {instanceID: 13412}
     - Class: 114
-      Script: {instanceID: 13518}
+      Script: {instanceID: 13500}
     - Class: 114
-      Script: {instanceID: 13752}
+      Script: {instanceID: 13736}
     - Class: 114
-      Script: {instanceID: 13974}
+      Script: {instanceID: 13958}
     - Class: 114
-      Script: {instanceID: 14076}
+      Script: {instanceID: 14060}
     - Class: 114
-      Script: {instanceID: 14118}
+      Script: {instanceID: 14102}
     - Class: 114
-      Script: {instanceID: 14128}
+      Script: {instanceID: 14112}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -610,7 +620,7 @@ ScriptsOnlyBuild:
     className: ToDemoHubButton
   - hash:
       serializedVersion: 2
-      Hash: d05a063defe0fcd0558eb2a92e86cfb6
+      Hash: ebf4989a7e5f8d8936d7733c790ed1b1
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -1252,10 +1262,22 @@ ScriptsOnlyBuild:
     className: RoomListView
   - hash:
       serializedVersion: 2
+      Hash: 070adbe58935df51e2aa4c20bd4e9946
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PickupCollider
+  - hash:
+      serializedVersion: 2
       Hash: 1bbce36c26e06daa73238c07c42b2bc9
     assemblyName: PhotonUnityNetworking.Demos.dll
     namespaceName: Photon.Pun.Demo.PunBasics
     className: CameraWork
+  - hash:
+      serializedVersion: 2
+      Hash: a2a23a587d7f9e6802f4c8613f09b2d3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PickupSpawner
   - hash:
       serializedVersion: 2
       Hash: e10400e84c8c573b2b5e4088aca77453
