@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviourPunCallbacks
     private int pickupsColllected = 0;
     [SerializeField]
     private int pickupsNeeded = 20;
+    [SerializeField]
+    private PickupSpawner pickupSpawner;
 
     #region Unity Callback Methods;
     // Start is called before the first frame update
@@ -56,6 +58,7 @@ public class GameManager : MonoBehaviourPunCallbacks
             uiInformText.text = "Joined to " + PhotonNetwork.CurrentRoom.Name + "\nWaiting for player 2...";
             isControllingCamera = true;
             visionBlocker.SetActive(true);
+            SpawnPickup();
         }
         else
         {
@@ -72,11 +75,6 @@ public class GameManager : MonoBehaviourPunCallbacks
     #endregion
 
     #region Public Methods
-    public void ChangeGameMode()
-    {
-        isControllingCamera = !isControllingCamera;
-        visionBlocker.SetActive(isControllingCamera);
-    }
     public void CollectPickup()
     {
         pickupsColllected++;
@@ -87,7 +85,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         else
         {
             ChangeGameMode();
-            // TODO: Spawn next pickup.
+            SpawnPickup();
         }
     }
     #endregion
@@ -107,5 +105,18 @@ public class GameManager : MonoBehaviourPunCallbacks
         yield return new WaitForSeconds(seconds);
         gameObject.SetActive(false);
     }
+    private void ChangeGameMode()
+    {
+        isControllingCamera = !isControllingCamera;
+        visionBlocker.SetActive(isControllingCamera);
+    }
+    private void SpawnPickup()
+    {
+        if (PhotonNetwork.LocalPlayer == PhotonNetwork.MasterClient)
+        {
+            pickupSpawner.SpawnRandomPickup();
+        }
+    }
+
     #endregion
 }

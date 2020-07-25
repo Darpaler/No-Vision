@@ -30,8 +30,7 @@ public class PickupSpawner : MonoBehaviourPunCallbacks
         }
         while (Vector3.Distance(Vector3.zero, spawnVector) < spawnDistance);
         pickup.transform.position = spawnVector;
-        Instantiate(pickup, transform, false);
-        //PhotonNetwork.Instantiate(pickup.name, );
+        PhotonNetwork.Instantiate(pickup.name, pickup.transform.localPosition, Quaternion.identity);
     }
 
 }

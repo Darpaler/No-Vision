@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class CameraController : MonoBehaviour
+public class CameraController : MonoBehaviourPunCallbacks
 {
     // Variables
     
@@ -29,6 +31,13 @@ public class CameraController : MonoBehaviour
         {
             cameraParent.transform.Rotate(0, -Input.gyro.rotationRateUnbiased.y, 0);
             transform.Rotate(-Input.gyro.rotationRateUnbiased.x, 0, 0);
+        }
+        else 
+        {
+            if (photonView.IsMine)
+            {
+                photonView.TransferOwnership(PhotonNetwork.PlayerListOthers[0]);
+            }
         }
     }
 }

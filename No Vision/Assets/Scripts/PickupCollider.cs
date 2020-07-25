@@ -19,9 +19,10 @@ public class PickupCollider : MonoBehaviourPunCallbacks
             currentTime += Time.deltaTime;
             if(currentTime >= pickupTime)
             {
-                if (gameManager.isControllingCamera)
+                if (PhotonNetwork.LocalPlayer == PhotonNetwork.MasterClient)
                 {
-                    Destroy(other.gameObject);
+                    Debug.Log("Destroying");
+                    PhotonNetwork.Destroy(other.gameObject);
                     photonView.RPC("OnPickup", RpcTarget.All);
                 }
             }
@@ -39,6 +40,8 @@ public class PickupCollider : MonoBehaviourPunCallbacks
     [PunRPC]
     private void OnPickup()
     {
+        Debug.Log("Collecting");
+        currentTime = 0f;
         gameManager.CollectPickup();
     }
 }
