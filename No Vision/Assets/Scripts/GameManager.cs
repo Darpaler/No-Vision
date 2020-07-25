@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviourPunCallbacks
     private GameObject searchForGamesButtonGameObject;
     [SerializeField]
     private GameObject visionBlocker;
+    [SerializeField]
+    private TextMeshProUGUI scoreText;
 
     [Header("Game Data")]
     public bool isControllingCamera = false;
@@ -78,6 +80,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     public void CollectPickup()
     {
         pickupsColllected++;
+        scoreText.text = "Score: " + pickupsColllected + "/20";
         if(pickupsColllected >= pickupsNeeded)
         {
             // TODO: Load victory screen.
