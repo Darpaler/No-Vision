@@ -6,6 +6,7 @@ ScriptsOnlyBuild:
     - LobbyManager
     - PickupCollider
     - PickupSpawner
+    - VictoryUIManager
     PhotonUnityNetworking.Demos.dll:
     - Photon.Pun.Demo.Asteroids.Asteroid
     - Photon.Pun.Demo.Asteroids.Bullet
@@ -80,7 +81,7 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11240}
+      Script: {instanceID: 11238}
     - Class: 114
       Script: {instanceID: 11564}
     - Class: 114
@@ -104,9 +105,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13500}
     - Class: 114
-      Script: {instanceID: 13958}
+      Script: {instanceID: 13960}
     - Class: 114
-      Script: {instanceID: 14060}
+      Script: {instanceID: 14062}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -149,7 +150,7 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11240}
+      Script: {instanceID: 11238}
     - Class: 114
       Script: {instanceID: 11564}
     - Class: 114
@@ -161,7 +162,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13500}
     - Class: 114
-      Script: {instanceID: 14060}
+      Script: {instanceID: 14062}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -218,11 +219,11 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11240}
+      Script: {instanceID: 11238}
     - Class: 114
-      Script: {instanceID: 11440}
+      Script: {instanceID: 11438}
     - Class: 114
-      Script: {instanceID: 11466}
+      Script: {instanceID: 11464}
     - Class: 114
       Script: {instanceID: 11508}
     - Class: 114
@@ -266,15 +267,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13500}
     - Class: 114
-      Script: {instanceID: 13736}
+      Script: {instanceID: 13738}
     - Class: 114
-      Script: {instanceID: 13958}
+      Script: {instanceID: 13960}
     - Class: 114
-      Script: {instanceID: 14060}
+      Script: {instanceID: 14062}
     - Class: 114
-      Script: {instanceID: 14102}
+      Script: {instanceID: 14104}
     - Class: 114
-      Script: {instanceID: 14112}
+      Script: {instanceID: 14114}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -304,6 +305,59 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
     - Class: 225
+      Script: {instanceID: 0}
+    Assets/Scenes/Victory.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11238}
+    - Class: 114
+      Script: {instanceID: 11564}
+    - Class: 114
+      Script: {instanceID: 12160}
+    - Class: 114
+      Script: {instanceID: 12756}
+    - Class: 114
+      Script: {instanceID: 13104}
+    - Class: 114
+      Script: {instanceID: 13412}
+    - Class: 114
+      Script: {instanceID: 13500}
+    - Class: 114
+      Script: {instanceID: 13662}
+    - Class: 114
+      Script: {instanceID: 14062}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -450,6 +504,12 @@ ScriptsOnlyBuild:
     assemblyName: PhotonUnityNetworking.Utilities.dll
     namespaceName: Photon.Pun.UtilityScripts
     className: TextToggleIsOnTransition
+  - hash:
+      serializedVersion: 2
+      Hash: 89a54052775a710c8553434ee739e9dc
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Timer
   - hash:
       serializedVersion: 2
       Hash: a5781dc71a671b1ad2b38de19f24b71f
@@ -620,7 +680,7 @@ ScriptsOnlyBuild:
     className: ToDemoHubButton
   - hash:
       serializedVersion: 2
-      Hash: ebf4989a7e5f8d8936d7733c790ed1b1
+      Hash: 310f136667486343a4f4b6dacb7d5889
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -1388,6 +1448,12 @@ ScriptsOnlyBuild:
     className: CrcCheckToggle
   - hash:
       serializedVersion: 2
+      Hash: 0d1fbe2b3f9b09c13cfa4c1756e8fc71
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: VictoryUIManager
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: PhotonUnityNetworking.Utilities.dll
     namespaceName: Photon.Pun.UtilityScripts
@@ -1684,5 +1750,6 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Lobby.unity
   - Assets/Scenes/Game.unity
+  - Assets/Scenes/Victory.unity
   - Assets/Scenes/Loading.unity
   playerPath: C:/Users/Darin/Desktop/No Vision.apk

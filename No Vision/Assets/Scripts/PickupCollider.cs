@@ -12,6 +12,14 @@ public class PickupCollider : MonoBehaviourPunCallbacks
     [SerializeField]
     private GameManager gameManager;
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            photonView.RPC("OnPickup", RpcTarget.All);
+        }    
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if(other.gameObject.tag == "Pickup")

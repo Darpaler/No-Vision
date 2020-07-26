@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
@@ -16,6 +16,11 @@ public class GameManager : MonoBehaviourPunCallbacks
     private GameObject searchForGamesButtonGameObject;
     [SerializeField]
     private GameObject visionBlocker;
+    [SerializeField]
+    private TextMeshProUGUI scoreText;
+    [SerializeField]
+    private TextMeshProUGUI timerText;
+    private TimeSpan timeSpan;
 
     [Header("Game Data")]
     public bool isControllingCamera = false;
@@ -35,6 +40,15 @@ public class GameManager : MonoBehaviourPunCallbacks
         uiInformText.text = "Click the button to search for a game.";
     }
     #endregion
+
+    void Update()
+    {
+        if (Timer.Instance.isSet)
+        {
+            timeSpan = TimeSpan.FromSeconds(Timer.Instance.time);
+            timerText.text = "Timer: " + string.Format("{0:D2}:{1:D2}:{2:D2}", timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds);
+        }
+    }
 
     #region UI Callback Methods
     public void JoinRandomRoom()
@@ -58,12 +72,12 @@ public class GameManager : MonoBehaviourPunCallbacks
             uiInformText.text = "Joined to " + PhotonNetwork.CurrentRoom.Name + "\nWaiting for player 2...";
             isControllingCamera = true;
             visionBlocker.SetActive(true);
-            SpawnPickup();
         }
         else
         {
             uiInformText.text = "Joined to " + PhotonNetwork.CurrentRoom.Name;
             StartCoroutine(DeactivateAfterSeconds(uiInformPanelGameObject, 2.0f));
+            photonView.RPC("StartGame", RpcTarget.All);
         }
     }
     public override void OnPlayerEnteredRoom(Player newPlayer)
@@ -78,9 +92,11 @@ public class GameManager : MonoBehaviourPunCallbacks
     public void CollectPickup()
     {
         pickupsColllected++;
+        scoreText.text = "Score: " + pickupsColllected + "/20";
         if(pickupsColllected >= pickupsNeeded)
         {
-            // TODO: Load victory screen.
+            Timer.Instance.isSet = false;
+            SceneLoader.Instance.LoadScene("Victory");
         }
         else
         {
@@ -93,7 +109,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     #region Private Methods
     void CreateAndJoinRoom()
     {
-        string randomRoomName = "Room" + Random.Range(0, 1000);
+        string randomRoomName = "Room" + UnityEngine.Random.Range(0, 1000);
 
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.MaxPlayers = 2;
@@ -116,6 +132,13 @@ public class GameManager : MonoBehaviourPunCallbacks
         {
             pickupSpawner.SpawnRandomPickup();
         }
+    }
+
+    [PunRPC]
+    private void StartGame()
+    {
+        SpawnPickup();
+        Timer.Instance.ResetTimer();
     }
 
     #endregion
