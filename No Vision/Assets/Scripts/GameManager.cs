@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         if(pickupsColllected >= pickupsNeeded)
         {
             Timer.Instance.isSet = false;
-            // TODO: Load victory screen.
+            SceneLoader.Instance.LoadScene("Victory");
         }
         else
         {
