@@ -6,6 +6,7 @@ ScriptsOnlyBuild:
     - LobbyManager
     - PickupCollider
     - PickupSpawner
+    - Timer
     PhotonUnityNetworking.Demos.dll:
     - Photon.Pun.Demo.Asteroids.Asteroid
     - Photon.Pun.Demo.Asteroids.Bullet
@@ -16,8 +17,6 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.PunBasics.PlayerUI
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
-    PhotonUnityNetworking.Editor.dll:
-    - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
     - Photon.Pun.PhotonRigidbodyView
@@ -82,33 +81,35 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11246}
+      Script: {instanceID: 11238}
     - Class: 114
-      Script: {instanceID: 11570}
+      Script: {instanceID: 11562}
     - Class: 114
-      Script: {instanceID: 11594}
+      Script: {instanceID: 11586}
     - Class: 114
-      Script: {instanceID: 11796}
+      Script: {instanceID: 11788}
     - Class: 114
-      Script: {instanceID: 12166}
+      Script: {instanceID: 12158}
     - Class: 114
-      Script: {instanceID: 12606}
+      Script: {instanceID: 12598}
     - Class: 114
-      Script: {instanceID: 12762}
+      Script: {instanceID: 12754}
     - Class: 114
-      Script: {instanceID: 13110}
+      Script: {instanceID: 13102}
     - Class: 114
-      Script: {instanceID: 13296}
+      Script: {instanceID: 13288}
     - Class: 114
-      Script: {instanceID: 13338}
+      Script: {instanceID: 13330}
     - Class: 114
-      Script: {instanceID: 13418}
+      Script: {instanceID: 13410}
     - Class: 114
-      Script: {instanceID: 13506}
+      Script: {instanceID: 13498}
     - Class: 114
-      Script: {instanceID: 13964}
+      Script: {instanceID: 13956}
     - Class: 114
-      Script: {instanceID: 14066}
+      Script: {instanceID: 14058}
+    - Class: 114
+      Script: {instanceID: 17446}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -151,19 +152,19 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11246}
+      Script: {instanceID: 11238}
     - Class: 114
-      Script: {instanceID: 11570}
+      Script: {instanceID: 11562}
     - Class: 114
-      Script: {instanceID: 12166}
+      Script: {instanceID: 12158}
     - Class: 114
-      Script: {instanceID: 13110}
+      Script: {instanceID: 13102}
     - Class: 114
-      Script: {instanceID: 13418}
+      Script: {instanceID: 13410}
     - Class: 114
-      Script: {instanceID: 13506}
+      Script: {instanceID: 13498}
     - Class: 114
-      Script: {instanceID: 14066}
+      Script: {instanceID: 14058}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -220,63 +221,63 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11246}
+      Script: {instanceID: 11238}
     - Class: 114
-      Script: {instanceID: 11446}
+      Script: {instanceID: 11438}
     - Class: 114
-      Script: {instanceID: 11472}
+      Script: {instanceID: 11464}
     - Class: 114
-      Script: {instanceID: 11514}
+      Script: {instanceID: 11506}
     - Class: 114
-      Script: {instanceID: 11570}
+      Script: {instanceID: 11562}
     - Class: 114
-      Script: {instanceID: 12064}
+      Script: {instanceID: 12056}
     - Class: 114
-      Script: {instanceID: 12166}
+      Script: {instanceID: 12158}
     - Class: 114
-      Script: {instanceID: 12218}
+      Script: {instanceID: 12210}
     - Class: 114
-      Script: {instanceID: 12258}
+      Script: {instanceID: 12250}
     - Class: 114
-      Script: {instanceID: 12532}
+      Script: {instanceID: 12524}
     - Class: 114
-      Script: {instanceID: 12606}
+      Script: {instanceID: 12598}
     - Class: 114
-      Script: {instanceID: 12762}
+      Script: {instanceID: 12754}
     - Class: 114
-      Script: {instanceID: 12830}
+      Script: {instanceID: 12822}
     - Class: 114
-      Script: {instanceID: 12928}
+      Script: {instanceID: 12920}
     - Class: 114
-      Script: {instanceID: 13030}
+      Script: {instanceID: 13022}
     - Class: 114
-      Script: {instanceID: 13046}
+      Script: {instanceID: 13038}
     - Class: 114
-      Script: {instanceID: 13110}
+      Script: {instanceID: 13102}
     - Class: 114
-      Script: {instanceID: 13130}
+      Script: {instanceID: 13122}
     - Class: 114
-      Script: {instanceID: 13276}
+      Script: {instanceID: 13268}
     - Class: 114
-      Script: {instanceID: 13312}
+      Script: {instanceID: 13304}
     - Class: 114
-      Script: {instanceID: 13340}
+      Script: {instanceID: 13332}
     - Class: 114
-      Script: {instanceID: 13352}
+      Script: {instanceID: 13344}
     - Class: 114
-      Script: {instanceID: 13418}
+      Script: {instanceID: 13410}
     - Class: 114
-      Script: {instanceID: 13506}
+      Script: {instanceID: 13498}
     - Class: 114
-      Script: {instanceID: 13742}
+      Script: {instanceID: 13734}
     - Class: 114
-      Script: {instanceID: 13964}
+      Script: {instanceID: 13956}
     - Class: 114
-      Script: {instanceID: 14066}
+      Script: {instanceID: 14058}
     - Class: 114
-      Script: {instanceID: 14108}
+      Script: {instanceID: 14100}
     - Class: 114
-      Script: {instanceID: 14118}
+      Script: {instanceID: 14110}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -622,7 +623,7 @@ ScriptsOnlyBuild:
     className: ToDemoHubButton
   - hash:
       serializedVersion: 2
-      Hash: 575b37a0f387a6ebdf0a2f793c1b07b8
+      Hash: 310f136667486343a4f4b6dacb7d5889
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -1682,6 +1683,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 89a54052775a710c8553434ee739e9dc
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Timer
   platform: 13
   scenePathNames:
   - Assets/Scenes/Lobby.unity
